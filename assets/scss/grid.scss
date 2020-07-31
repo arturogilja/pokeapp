@@ -1,0 +1,75 @@
+$grid-width: 114rem;
+$space-vertical: 0.8rem;
+$space-vertical-small: 0.8rem;
+$space-horizontal: 0.8rem;
+
+.row {
+  max-width: $grid-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $space-vertical;
+
+    @include respond(tab-port) {
+      margin-bottom: $space-vertical-small;
+    }
+  }
+
+  @include respond(tab-land) {
+    max-width: 100%;
+    padding: 0 4rem;
+  }
+
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+  [class^='col-'] {
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $space-horizontal;
+
+      @include respond(tab-land) {
+        margin-right: 0;
+        margin-bottom: $space-vertical-small;
+      }
+    }
+
+    @include respond(tab-land) {
+      width: 100% !important;
+    }
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$space-horizontal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - 2 * #{$space-horizontal}) / 3);
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - 3 * #{$space-horizontal}) / 4);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      2 * ((100% - 2 * #{$space-horizontal}) / 3) + #{$space-horizontal}
+    );
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      2 * ((100% - 3 * #{$space-horizontal}) / 4) + #{$space-horizontal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      3 * ((100% - 3 * #{$space-horizontal}) / 4) + 2 * #{$space-horizontal}
+    );
+  }
+}

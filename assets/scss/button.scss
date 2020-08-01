@@ -1,0 +1,29 @@
+.button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+  transition: all ease-in-out 0.2s;
+  border-style: none;
+  outline: none;
+
+  &:hover {
+    background-color: var(--button-hover);
+    cursor: pointer;
+  }
+
+  &:active {
+    background-color: var(--button-bg);
+  }
+}
+
+.button-disabled {
+  background-color: var(--button-disabled);
+  &:hover {
+    background-color: var(--button-disabled);
+  }
+
+  &:active {
+    background-color: var(--button-disabled);
+  }
+}

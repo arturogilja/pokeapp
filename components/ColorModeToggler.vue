@@ -11,8 +11,14 @@ export default {
   },
   methods: {
     toggleColor(e) {
-      this.$colorMode.preference =
+      const newColor = this.$colorMode.value === 'light' ? 'dark' : 'light'
+      this.$colorMode.preference = newColor
+      this.$colorMode.value = newColor
+
+      this.$store.commit(
+        'color/SET_COLOR_PREFERENCE',
         this.$colorMode.value === 'light' ? 'dark' : 'light'
+      )
     },
   },
 }

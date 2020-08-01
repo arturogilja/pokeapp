@@ -34,7 +34,7 @@ export default {
     Spinner,
     Card,
   },
-  layout: 'Dashboard',
+  layout: 'dashboard',
   data() {
     return {}
   },
@@ -55,6 +55,11 @@ export default {
   // },
 
   async created() {
+    //Setear esquema de color
+    if (this.$store.state.color.colorPreference) {
+      this.$colorMode.value = this.$store.state.color.colorPreference
+    }
+
     this.$store.commit('pokemon/SET_POKEMONS', [])
     this.$store.commit('pokemon/SET_LOADING', true)
     const { data } = await getAllPokemon()

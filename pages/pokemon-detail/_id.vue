@@ -40,7 +40,7 @@
 import { getPokemonById } from '../../services/pokemonService'
 export default {
   layout(context) {
-    return 'dashboard'
+    return 'Dashboard'
   },
   middleware: 'authenticated',
   data() {

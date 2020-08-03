@@ -11,7 +11,8 @@
           v-for="(type, i) in types"
           :value="type.name"
           :key="i"
-        >{{ type.name }}</option>
+          >{{ type.name }}</option
+        >
       </select>
     </div>
     <div class="row">
@@ -20,13 +21,24 @@
           <spinner v-if="$store.state.pokemon.loading" />
         </div>
 
-        <div class="row" v-show="rows.length !== 0" v-for="pokemons in rows" :key="pokemons[0].id">
-          <card v-for="pokemon in pokemons" :key="pokemon.id" :pokemon="pokemon" />
+        <div
+          class="row"
+          v-show="rows.length !== 0"
+          v-for="pokemons in rows"
+          :key="pokemons[0].id"
+        >
+          <card
+            v-for="pokemon in pokemons"
+            :key="pokemon.id"
+            :pokemon="pokemon"
+          />
         </div>
         <div
           class="message"
           v-show="rows.length === 0 && !$store.state.pokemon.loading"
-        >There are no pokemons</div>
+        >
+          There are no pokemons
+        </div>
       </div>
       <div class="col-1-of-4">
         <selected-pokemons />
@@ -64,6 +76,11 @@ export default {
     }
   },
   middleware: 'authenticated',
+  head() {
+    return {
+      title: 'Pokeapp - Dashboard',
+    }
+  },
   // Se puede usar asyncData para inflar el estado del lado del servidor, o bien a la hora de hacer el build.
   // En este caso no se hizo uso de la funcionalidad para demostrar el funcionamiento del loader, por lo que las peticiones se hacen desde el hook created().
   // De igual forma se muestra en el siguiente fragmento comentado como se haría esta funcionalidad utilizando asyncData.

@@ -14,7 +14,9 @@
         <div class="title">Abilities</div>
         <div class="text">
           <ul>
-            <li v-for="(ability, i) in pokemon.abilities" :key="i">{{ ability.ability.name }}</li>
+            <li v-for="(ability, i) in pokemon.abilities" :key="i">
+              {{ ability.ability.name }}
+            </li>
           </ul>
         </div>
         <div class="title">Base experience</div>
@@ -24,7 +26,9 @@
         <div class="title">Types</div>
         <div class="text">
           <ul>
-            <li v-for="(type, i) in pokemon.types" :key="i">{{ type.type.name }}</li>
+            <li v-for="(type, i) in pokemon.types" :key="i">
+              {{ type.type.name }}
+            </li>
           </ul>
         </div>
       </div>
@@ -48,12 +52,16 @@ export default {
         return this.pokemon.moves.map((move) => move.move.name).join(', ')
     },
   },
+  head() {
+    return {
+      title: 'Pokeapp - Pokemon Detail',
+    }
+  },
   async beforeCreate() {
     const name = this.$route.params.id
     try {
       const pokemon = await getPokemonById(name)
       this.pokemon = pokemon.data
-      console.log(this.pokemon)
     } catch (error) {
       this.$router.push('/home')
     }

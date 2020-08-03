@@ -6,12 +6,16 @@
           class="button nav-button left"
           :class="{ 'button-disabled': !isLogin }"
           @click="goLogin"
-        >Login</button>
+        >
+          Login
+        </button>
         <button
           class="button nav-button right"
           :class="{ 'button-disabled': isLogin }"
           @click="goRegister"
-        >Register</button>
+        >
+          Register
+        </button>
       </div>
       <keep-alive>
         <component class="component" :is="activeComponent" />
@@ -35,6 +39,11 @@ export default {
   data() {
     return {
       activeComponent: 'Login',
+    }
+  },
+  head() {
+    return {
+      title: 'Pokeapp',
     }
   },
   mounted() {

@@ -19,7 +19,7 @@ La aplicación fue elaborada con Nuxt.js, la cual además de permitir crear apli
 
 Se utilizaron multiples plugins para lograr la funcionalidad deseada, tales como style-resources para compilar de manera automática el SCSS, nuxt-color-mode para tener múltiples esquemas de colores y vuex-persistedstate para almacenar el estado del store en localStorage (aunque también podría ser en cookies).
 
-No se utilizaron librerias externas de CSS, y las variables de entorno deben estar en un archivo llamado .env dentro del directorio raiz.
+No se utilizaron librerias externas de CSS, y las variables de entorno deben estar en un archivo llamado .env dentro del directorio raiz. Gracias al PersistedState al recargar la pagina no se pierden los datos que ha manipulado el usuario
 
 En general se hizo uso de muchas funcionalidades de Vue tales como Mixins, Route Guards (middlewares), Vuex, Lifecycle hooks, Watchers y Computed Properties.
 

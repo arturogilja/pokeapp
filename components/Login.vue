@@ -12,7 +12,12 @@
       <div class="validation-message">{{ validationMessages.password }}</div>
     </div>
     <div class="form-group button-row">
-      <button class="button" type="submit">Log In</button>
+      <button
+        :class="{ 'button-disabled': !valid }"
+        class="button"
+        type="submit"
+        :disabled="!valid"
+      >Log In</button>
     </div>
   </form>
 </template>
@@ -53,5 +58,23 @@ export default {
       }
     },
   },
+  computed: {
+    valid() {
+      const valid =
+        this.validationMessages.email === '' &&
+        this.validationMessages.password === ''
+      return valid
+    },
+  },
 }
 </script>
+
+<style lang="scss" scoped>
+.button-disabled {
+  background-color: white;
+  &:hover {
+    background-color: white;
+    cursor: default;
+  }
+}
+</style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="title"></div>
+    <div class="title">Selected Pokemon</div>
     <div class="selected">
       <table>
         <thead>
@@ -12,7 +12,7 @@
         </thead>
         <tbody>
           <tr class="item" v-for="(pokemon, i) in $store.state.pokemon.selected" :key="i">
-            <td class="text">{{ pokemon.name }}</td>
+            <nuxt-link :to="`/pokemon-detail/${pokemon.name}`" class="text name">{{ pokemon.name }}</nuxt-link>
             <td class="text">{{ pokemon.ability }}</td>
             <div class="action" @click="remove(pokemon.id, i)">Remove</div>
           </tr>
@@ -41,6 +41,34 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.title {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.name {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+.action {
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
 table {
   width: 100%;
 }
@@ -53,7 +81,6 @@ th {
   height: 1.5rem;
 
   &:hover {
-    cursor: pointer;
     background-color: var(--bg-secondary);
   }
 }

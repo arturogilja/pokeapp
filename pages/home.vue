@@ -15,7 +15,7 @@
       </select>
     </div>
     <div class="row">
-      <div class="col-3-of-4">
+      <div class="col-3-of-4 content">
         <div class="spinner">
           <spinner v-if="$store.state.pokemon.loading" />
         </div>
@@ -90,7 +90,7 @@ export default {
     this.$store.commit('pokemon/SET_LOADING', true)
 
     const { data } = await getAllPokemonTypes()
-    console.log(data)
+
     this.types = data.results
     this.currentType = this.types[0].name
     await this.requestPokemonsFromType(this.currentType)
@@ -143,7 +143,6 @@ export default {
         }))
         this.$store.commit('pokemon/SET_POKEMONS', pokemonsFull)
       } catch (error) {
-        console.log(error)
         this.$store.commit(
           'pokemon/SET_ERROR',
           'Ha habido un error en el servidor.'

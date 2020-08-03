@@ -50,7 +50,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@nuxtjs/color-mode'],
+  buildModules: ['@nuxtjs/color-mode', '@nuxtjs/dotenv'],
   /*
    ** Nuxt.js modules
    */

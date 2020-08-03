@@ -26,7 +26,8 @@ export const mutations = {
   },
   REMOVE_FROM_SELECTED(state, { id, index }) {
     state.selected.splice(index, 1)
-    state.allPokemons.find((p) => p.id === id).selected = false
+    const selected = state.allPokemons.find((p) => p.id === id)
+    if (selected) selected.selected = false
   },
   CLEAR_SELECTED(state) {
     state.allPokemons.forEach((pokemon) => (pokemon.selected = false))

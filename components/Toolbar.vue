@@ -5,7 +5,7 @@
     <div class="options">
       <nuxt-link to="/home" class="link">Home</nuxt-link>
       <nuxt-link to="/home" class="link">Abilities</nuxt-link>
-      <a @click="logout" class="link">Log Out</a>
+      <a @click="logout" class="link">Logout</a>
       <ColorModeToggler />
     </div>
   </header>
@@ -42,10 +42,21 @@ header {
   img {
     height: 60%;
   }
+
+  @include respond(phone) {
+    height: 120px;
+    flex-direction: column;
+  }
 }
 
 .link {
   cursor: pointer;
   text-decoration: none;
+}
+
+.welcome {
+  @include respond(phone) {
+    order: 2;
+  }
 }
 </style>

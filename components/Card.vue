@@ -106,5 +106,9 @@ a {
       }
     }
   }
+
+  .buttons {
+    margin-top: 1rem;
+  }
 }
 </style>

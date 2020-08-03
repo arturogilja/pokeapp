@@ -16,7 +16,7 @@ export const authValidations = {
   methods: {
     validateEmail(value) {
       if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)) {
-        this.validationMessages.email = null
+        this.validationMessages.email = ''
       } else {
         this.validationMessages.email = 'Invalid Email Address'
       }
@@ -26,7 +26,7 @@ export const authValidations = {
       if (value.length < 8) {
         this.validationMessages.password = `Must be 8 characters! ${difference} characters left`
       } else {
-        this.validationMessages.password = null
+        this.validationMessages.password = ''
       }
     },
     validatePasswordConfirmation(value) {
@@ -36,7 +36,7 @@ export const authValidations = {
       } else if (value !== this.password) {
         this.validationMessages.confirmPassword = 'The passwords do not match'
       } else {
-        this.validationMessages.confirmPassword = null
+        this.validationMessages.confirmPassword = ''
       }
     },
   },

@@ -37,7 +37,7 @@ export default {
       activeComponent: 'Login',
     }
   },
-  beforeMount() {
+  mounted() {
     this.$colorMode.preference = 'light'
   },
   methods: {

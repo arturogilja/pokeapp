@@ -69,7 +69,7 @@ export default {
     SelectedPokemons,
   },
   layout(context) {
-    return 'dashboard'
+    return 'Dashboard'
   },
   data() {
     return {

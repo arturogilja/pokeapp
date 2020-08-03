@@ -68,7 +68,9 @@ export default {
     Card,
     SelectedPokemons,
   },
-  layout: 'dashboard',
+  layout(context) {
+    return 'dashboard'
+  },
   data() {
     return {
       types: [],

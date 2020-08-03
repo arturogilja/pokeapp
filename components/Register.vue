@@ -1,5 +1,5 @@
 <template>
-  <form class="form-box">
+  <form class="form-box" @submit.prevent="register">
     <div class="form-error">{{ error }}</div>
     <div class="form-group">
       <div class="label">Email</div>
@@ -14,7 +14,9 @@
     <div class="form-group">
       <div class="label">Confirm Password</div>
       <input type="password" v-model="confirmPassword" class="input" />
-      <div class="validation-message">{{ validationMessages.confirmPassword }}</div>
+      <div class="validation-message">
+        {{ validationMessages.confirmPassword }}
+      </div>
     </div>
     <div class="form-group button-row">
       <button
@@ -22,7 +24,9 @@
         :class="{ 'button-disabled': !valid }"
         type="submit"
         :disabled="!valid"
-      >Register</button>
+      >
+        Register
+      </button>
     </div>
   </form>
 </template>
@@ -38,13 +42,15 @@ export default {
     return {}
   },
   methods: {
-    async register() {
+    async register(e) {
       this.error = null
       try {
         const response = await firebase
           .auth()
           .createUserWithEmailAndPassword(this.email, this.password)
+        console.log(response)
       } catch (error) {
+        console.log(error)
         switch (error.code) {
           case 'auth/email-already-in-use':
             this.error =

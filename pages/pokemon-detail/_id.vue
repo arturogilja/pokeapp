@@ -39,7 +39,9 @@
 <script>
 import { getPokemonById } from '../../services/pokemonService'
 export default {
-  layout: 'dashboard',
+  layout(context) {
+    return 'dashboard'
+  },
   middleware: 'authenticated',
   data() {
     return {

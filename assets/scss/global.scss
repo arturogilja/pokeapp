@@ -9,8 +9,8 @@ $transparent-border: #72727244;
 $light-color: #243746;
 $light-color-primary: #243746;
 $light-color-secondary: #0e2233;
-$light-bg: #f3f5f4;
-$light-bg-secondary: #f3f5f4;
+$light-bg: #f8fcff;
+$light-bg-secondary: #f1f9ff;
 $light-border-color: #f3f5f4;
 
 $light-button-bg: #0e2233;
@@ -27,8 +27,8 @@ $dark-bg-secondary: #071521;
 $dark-border-color: #0d2538;
 $dark-button-disabled: #4e4e4e;
 
-$dark-button-bg: #eeeeee;
-$dark-button-hover: #d6d6d6;
+$dark-button-bg: #ffffff;
+$dark-button-hover: #aaaad3;
 $dark-button-disabled: #838383;
 $dark-button-text: #091a28;
 
@@ -101,11 +101,18 @@ a {
 }
 
 .form-group {
-  margin: 1.5rem 1rem;
+  margin: 0.5rem 0.5rem;
 
   .label {
     font-size: 0.9rem;
   }
+}
+
+.form-error {
+  font-size: 0.9rem;
+  min-height: 1rem;
+  width: 100%;
+  text-align: center;
 }
 
 .button-row {
@@ -123,8 +130,16 @@ a {
   width: 100%;
 
   &:focus {
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   }
+}
+
+.validation-message {
+  height: 0.8rem;
+  font-size: 0.7rem;
+  width: 100%;
+  text-align: center;
+  margin-top: 4px;
 }
 
 @import 'mixins.scss';

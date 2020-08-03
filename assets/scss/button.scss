@@ -4,7 +4,7 @@
   padding: 0.5rem 0.8rem;
   font-size: 0.8rem;
   transition: all ease-in-out 0.2s;
-  border-style: none;
+  border: 1px solid var(--button-text);
   outline: none;
 
   &:hover {

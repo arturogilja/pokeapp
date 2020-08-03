@@ -7,6 +7,11 @@ $space-horizontal: 0.8rem;
   max-width: $grid-width;
   margin: 0 auto;
 
+  @include respond(tab-port) {
+    max-width: 90%;
+    padding: 0 3rem;
+  }
+
   &:not(:last-child) {
     margin-bottom: $space-vertical;
 
@@ -17,7 +22,11 @@ $space-horizontal: 0.8rem;
 
   @include respond(tab-land) {
     max-width: 100%;
-    padding: 0 4rem;
+    padding: 0 2rem;
+  }
+
+  @include respond(phone) {
+    padding: 0 0.6rem;
   }
 
   &::after {

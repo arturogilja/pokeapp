@@ -8,6 +8,9 @@ export default {
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
    */
+  server: {
+    host: '0.0.0.0',
+  },
   target: 'static',
   /*
    ** Headers of the page
@@ -34,7 +37,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [],
+  plugins: [
+    '~plugins/firebase.js',
+    '~plugins/fireauth.js',
+    { src: '~/plugins/localStorage.js', ssr: false },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components

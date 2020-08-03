@@ -11,3 +11,11 @@ export async function getPokemonById(id) {
 export async function getPokemonDescription(id) {
   return await axios.get(`https://pokeapi.co/api/v2/pokemon-species/${id}`)
 }
+
+export async function getAllPokemonTypes() {
+  return await axios.get(`https://pokeapi.co/api/v2/type/`)
+}
+
+export async function getPokemonTypeById(id) {
+  return await axios.get(`https://pokeapi.co/api/v2/type/${id}`)
+}

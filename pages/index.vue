@@ -1,16 +1,15 @@
 <template>
   <div>
-    <nuxt-link to="/home">Dashboard</nuxt-link>
     <div class="wrapper">
       <div class="navigation">
         <button
           class="button nav-button left"
-          :class="{ 'button-disabled' : !isLogin }"
+          :class="{ 'button-disabled': !isLogin }"
           @click="goLogin"
         >Login</button>
         <button
           class="button nav-button right"
-          :class="{ 'button-disabled' : isLogin }"
+          :class="{ 'button-disabled': isLogin }"
           @click="goRegister"
         >Register</button>
       </div>
@@ -22,6 +21,8 @@
 </template>
 
 <script>
+import firebase from 'firebase/app'
+import 'firebase/auth'
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
 
@@ -30,13 +31,13 @@ export default {
     Login,
     Register,
   },
+  middleware: 'login',
   data() {
     return {
       activeComponent: 'Login',
     }
   },
   beforeMount() {
-    this.$colorMode.value = 'light'
     this.$colorMode.preference = 'light'
   },
   methods: {

@@ -1,7 +1,15 @@
 <template>
   <div>
+    <toolbar />
     <Nuxt />
   </div>
 </template>
 
-<style></style>
+<script>
+import Toolbar from '../components/Toolbar.vue'
+export default {
+  components: {
+    Toolbar,
+  },
+}
+</script>
